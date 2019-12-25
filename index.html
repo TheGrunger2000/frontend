@@ -25,8 +25,7 @@
                 </nav>
             </div>
         </header>
-        
-        
+             
         <main>
             <div class="parallax-container">
                 <img class="background" src="img/background.jpg" alt="night chicago">
@@ -170,18 +169,20 @@
                 <div class="flag flag--shifted" id="pictures"></div>
                 <div class="main-third parallax-child">
                     <div class="wrap">
-                        <article>
-                            <h2>Pictures</h2>
-                            <ul class="main-third-pictures">
-                                <li class="main-third-pictures__item"><img src="img/ch1.jpg" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch2.jpg" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch3.jpg" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch4.jpg" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch5.jpg" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch6.png" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch7.jpg" alt="chicago picture"></li>
-                                <li class="main-third-pictures__item"><img src="img/ch8.jpg" alt="chicago picture"></li>
+                        <article class="article-grid-box">
+                            <h2 class="article-grid-box__item">Pictures</h2>
+                            <button class="prev article-grid-box__item2" onclick="plusSlides(-1)">&lt;</button>
+                            <ul class="main-third-pictures slideshow-container article-grid-box__item3">
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch1.jpg" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch2.jpg" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch3.jpg" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch4.jpg" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch5.jpg" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch6.png" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch7.jpg" alt="chicago picture"></li>
+                                <li class="main-third-pictures__item mySlides"><img src="img/ch8.jpg" alt="chicago picture"></li>
                             </ul>
+                            <button class="next article-grid-box__item4" onclick="plusSlides(1)">&gt;</button>
                         </article>
                         <h4>Sity Series</h4>
                     </div>
@@ -189,15 +190,39 @@
                     <footer>
                         <div class="wrap">
                             <h2>Contacts</h2>
-                            <ul>
-                                <li>Bogdan C. V.</li>
-                                <li>+ 7 963 378 32 79</li>
-                                <li>czorievbogdan@gmail.com</li>
+                            <ul class="footer-grid-box">
+                                <li class="footer-grid-box__item">Bogdan C. V.</li>
+                                <li class="footer-grid-box__item2">+ 7 963 378 32 79</li>
+                                <li class="footer-grid-box__item3">czorievbogdan@gmail.com</li>
                             </ul>
                         </div>
                     </footer>
                 </div>
             </div>
         </main>
+        
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              slides[slideIndex-1].style.display = "inline-block";  
+            }
+        </script>
     </body>
 </html>
